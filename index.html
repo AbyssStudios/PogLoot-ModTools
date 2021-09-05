@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>PogLoot Moderation Portal</title>
+</head>
+
+<body>
+	<h1>PogLoot Moderation Portal</h1>
+  <h2>Timestamp Verification (Mod)</h2>
+  <form id="timestampVerification">
+    <input placeholder="Timestamp" id="timestampToken">
+		<input placeholder="Secret Version Delay" id="versionDelay">
+    <button id="submitTsv" onclick="Timestamp()" type="button">Submit for Analysis</button>
+  </form>
+  <h3 id="result">...</h3>
+  <p>No effort was made to make this pretty, it's a secret site.</p>
+  <script>
+		function Timestamp() {
+			time = document.getElementById("timestampToken").value;
+			sVD = document.getElementById("versionDelay").value;
+			epochStamp = ((sVD + time) * 10000);
+			timestamp = new Date(epochStamp);
+			document.getElementById("result").innerHTML = ("Actual Time: " + timestamp.toISOString());
+		}
+  </script>
+</body>
+
+</html>
