@@ -19,7 +19,7 @@
 		function Timestamp() {
 			time = document.getElementById("timestampToken").value;
 			sVD = document.getElementById("versionDelay").value;
-			epochStamp = ((sVD + time) * 10000);
+			epochStamp = ((sVD + time) * 1000);
 			timestamp = new Date(epochStamp);
 			document.getElementById("result").innerHTML = ("Actual Time: " + timestamp.toISOString());
 		}
